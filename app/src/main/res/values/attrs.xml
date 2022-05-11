@@ -22,5 +22,7 @@
 
         <attr name="colorOnSurfacePrimary" format="color" />
         <attr name="colorOnSurfaceError" format="color" />
+
+        <attr name="backgroundCard" format="reference" />
     </declare-styleable>
 </resources>

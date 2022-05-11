@@ -32,6 +32,8 @@
 
         <!--  Assign system colorSurface to set default background for components, such as cards, sheets, and menus.  -->
         <item name="colorSurface">?attr/colorSurfaceMain</item>
+
+        <item name="backgroundCard">@drawable/background_light</item>
     </style>
 
 </resources>
