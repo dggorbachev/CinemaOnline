@@ -7,6 +7,10 @@ data class ViewState(
     val filmsList: List<FilmDomainModel>
 )
 
+sealed class UiEvent : Event {
+    data class OnFilmClick(val film: FilmDomainModel) : UiEvent()
+}
+
 sealed class DataEvent : Event {
     object OnLoadData : DataEvent()
     data class SuccessFilmsRequest(val filmsList: List<FilmDomainModel>) : DataEvent()

@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dggorbachev.cinemaonline.R
 import com.dggorbachev.cinemaonline.base.common.Constants.IMG_URL
+import com.dggorbachev.cinemaonline.base.utils.setThrottledClickListener
 import com.dggorbachev.cinemaonline.feature.films_list_screen.domain.model.FilmDomainModel
 
 class FilmsAdapter(
-    private var filmsList: List<FilmDomainModel>
+    private var filmsList: List<FilmDomainModel>,
+    private val onFilmClick: (film: FilmDomainModel) -> Unit
 ) : RecyclerView.Adapter<FilmsAdapter.ViewHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
@@ -59,6 +61,11 @@ class FilmsAdapter(
         holder.rvGenres.layoutManager = layoutManager
         holder.rvGenres.adapter = genresAdapter
         holder.rvGenres.setRecycledViewPool(viewPool)
+
+
+        holder.backImage.setThrottledClickListener {
+            onFilmClick(filmsList[position])
+        }
     }
 
     override fun getItemCount(): Int {

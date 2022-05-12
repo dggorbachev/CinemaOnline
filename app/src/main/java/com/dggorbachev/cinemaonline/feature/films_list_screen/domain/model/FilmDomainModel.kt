@@ -1,8 +1,9 @@
 package com.dggorbachev.cinemaonline.feature.films_list_screen.domain.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-
+@Parcelize
 data class FilmDomainModel(
     val id: Int,
     val title: String,
@@ -12,4 +13,4 @@ data class FilmDomainModel(
     val backdropPath: String? = "",
     val posterPath: String? = "",
     val voteAverage: Float
-)
+) : Parcelable
