@@ -6,6 +6,8 @@ import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.FilmsRepo
 import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.FilmsRepoImpl
 import com.dggorbachev.cinemaonline.feature.films_list_screen.domain.FilmsInteractor
 import com.dggorbachev.cinemaonline.feature.films_list_screen.ui.FilmsListViewModel
+import com.github.terrakok.cicerone.Cicerone
+import com.github.terrakok.cicerone.Router
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -28,6 +30,6 @@ val filmListScreenModule = module {
     }
 
     viewModel<FilmsListViewModel> {
-        FilmsListViewModel(get<FilmsInteractor>())
+        FilmsListViewModel(get<FilmsInteractor>(), get<Cicerone<Router>>().router)
     }
 }

@@ -1,5 +1,8 @@
 package com.dggorbachev.cinemaonline.di
 
+import com.github.terrakok.cicerone.Cicerone
+import com.github.terrakok.cicerone.NavigatorHolder
+import com.github.terrakok.cicerone.Router
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import okhttp3.logging.HttpLoggingInterceptor
@@ -27,5 +30,19 @@ val appModule = module {
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
+    }
+}
+
+val navigationModule = module {
+    single<Cicerone<Router>> {
+        Cicerone.create(Router())
+    }
+
+    single<NavigatorHolder> {
+        get<Cicerone<Router>>().getNavigatorHolder()
+    }
+
+    single<Router> {
+        get<Cicerone<Router>>().router
     }
 }
