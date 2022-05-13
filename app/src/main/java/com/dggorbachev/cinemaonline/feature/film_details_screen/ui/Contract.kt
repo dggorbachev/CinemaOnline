@@ -6,12 +6,9 @@ import com.dggorbachev.cinemaonline.feature.films_list_screen.domain.model.FilmD
 
 
 data class ViewState(
-    val videosList: List<VideoDomainModel>,
-    val filmDomainModel: FilmDomainModel
+    val videosList: List<VideoDomainModel>
 )
 
-sealed class DataEvent : Event {
-    data class OnLoadData(val movie_id: Int) : DataEvent()
-    data class SuccessVideosRequest(val videosList: List<VideoDomainModel>) : DataEvent()
-    data class ErrorVideosRequest(val errorMessage: String) : DataEvent()
+sealed class UiEvent : Event {
+    data class OnWatchClick(val movie_id: Int) : UiEvent()
 }

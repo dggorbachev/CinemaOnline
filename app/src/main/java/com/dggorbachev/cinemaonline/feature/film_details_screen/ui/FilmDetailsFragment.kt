@@ -38,6 +38,4 @@ class FilmDetailsFragment : Fragment(R.layout.fragment_film_details) {
     private fun render(state: ViewState) {
 
     }
-
-    public fun getModel() = parametersOf(arguments?.getParcelable(EXTRA_MOVIE))
 }
