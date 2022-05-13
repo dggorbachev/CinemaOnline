@@ -46,7 +46,7 @@ class FilmsListViewModel(
                     filmsList = listOf()
                 )
             }
-            is UiEvent.OnFilmClick->{
+            is UiEvent.OnFilmClick -> {
                 val screen = Screens.FilmDetailsScreen(filmDomainModel = event.film)
                 router.navigateTo(screen)
             }

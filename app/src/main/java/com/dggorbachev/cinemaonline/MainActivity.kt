@@ -54,11 +54,4 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
-
-    private fun setFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(android.R.id.content, fragment)
-            .commit()
-    }
-
 }
