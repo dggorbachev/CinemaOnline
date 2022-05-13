@@ -1,7 +1,7 @@
-package com.dggorbachev.cinemaonline.feature.films_list_screen.data.api
+package com.dggorbachev.cinemaonline.feature.film_details_screen.data.api
 
 import com.dggorbachev.cinemaonline.base.common.Constants
-import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.model.ResponseVideosModel
+import com.dggorbachev.cinemaonline.feature.film_details_screen.data.api.model.ResponseVideosModel
 import retrofit2.http.GET
 import retrofit2.http.Path
 

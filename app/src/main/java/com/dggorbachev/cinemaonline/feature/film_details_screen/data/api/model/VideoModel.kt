@@ -1,4 +1,4 @@
-package com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.model
+package com.dggorbachev.cinemaonline.feature.film_details_screen.data.api.model
 
 import com.google.gson.annotations.SerializedName
 
