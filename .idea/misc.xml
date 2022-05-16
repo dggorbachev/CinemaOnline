@@ -3,14 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bookmarks.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/feed.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/save.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/save_border.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/save_selector.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/star_fill0_wght400_grad0_opsz48.xml" value="0.1595" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
-        <entry key="app/src/main/res/layout/fragment_film_details.xml" value="0.4549266247379455" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19892883300781253" />
+        <entry key="app/src/main/res/layout/activity_player.xml" value="0.1485439724392361" />
+        <entry key="app/src/main/res/layout/fragment_bookmarks.xml" value="0.1722412109375" />
+        <entry key="app/src/main/res/layout/fragment_film_details.xml" value="0.352" />
         <entry key="app/src/main/res/layout/fragment_films_list.xml" value="0.23217926025390626" />
         <entry key="app/src/main/res/layout/fragment_player.xml" value="0.2621231079101562" />
-        <entry key="app/src/main/res/layout/item_film.xml" value="0.45432456709132896" />
+        <entry key="app/src/main/res/layout/item_film.xml" value="0.4247787610619469" />
         <entry key="app/src/main/res/layout/item_genre.xml" value="0.7060503359194157" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.28512820512820514" />
       </map>
     </option>
   </component>

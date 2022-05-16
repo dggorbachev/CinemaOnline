@@ -1,5 +1,7 @@
 package com.dggorbachev.cinemaonline.feature.films_list_screen.di
 
+import com.dggorbachev.cinemaonline.feature.films_bookmarks_screen.data.BookmarksRepo
+import com.dggorbachev.cinemaonline.feature.films_bookmarks_screen.domain.BookmarksInteractor
 import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.FilmsApi
 import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.FilmsRemoteSource
 import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.FilmsRepo
@@ -26,10 +28,13 @@ val filmListScreenModule = module {
     }
 
     single<FilmsInteractor> {
-        FilmsInteractor(get<FilmsRepo>())
+        FilmsInteractor(get<FilmsRepo>(), get<BookmarksRepo>())
     }
 
     viewModel<FilmsListViewModel> {
-        FilmsListViewModel(get<FilmsInteractor>(), get<Cicerone<Router>>().router)
+        FilmsListViewModel(
+            get<FilmsInteractor>(),
+            get<Cicerone<Router>>().router
+        )
     }
 }

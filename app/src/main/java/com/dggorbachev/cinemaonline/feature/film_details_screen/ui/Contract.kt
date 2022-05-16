@@ -18,4 +18,6 @@ sealed class DataEvent : Event {
 
 sealed class UiEvent : Event {
     data class OnWatchClick(val videoKey: String) : UiEvent()
+    object OnBookmarkClick : UiEvent()
+    object OnBackPressed : UiEvent()
 }

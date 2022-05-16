@@ -5,19 +5,19 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dggorbachev.cinemaonline.R
 import com.dggorbachev.cinemaonline.base.common.Constants
-import com.dggorbachev.cinemaonline.databinding.FragmentPlayerBinding
+import com.dggorbachev.cinemaonline.databinding.ActivityPlayerBinding
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 
 class PlayerActivity : YouTubeBaseActivity() {
 
-    private lateinit var binding: FragmentPlayerBinding
+    private lateinit var binding: ActivityPlayerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = FragmentPlayerBinding.inflate(layoutInflater)
+        binding = ActivityPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val b = intent.extras

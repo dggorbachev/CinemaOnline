@@ -13,6 +13,7 @@ import com.dggorbachev.cinemaonline.R
 import com.dggorbachev.cinemaonline.base.common.Constants.IMG_URL
 import com.dggorbachev.cinemaonline.base.utils.setThrottledClickListener
 import com.dggorbachev.cinemaonline.feature.films_list_screen.domain.model.FilmDomainModel
+import com.dggorbachev.cinemaonline.feature.films_list_screen.ui.UiEvent
 
 class FilmsAdapter(
     private var filmsList: List<FilmDomainModel>,

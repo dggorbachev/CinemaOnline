@@ -2,6 +2,7 @@ package com.dggorbachev.cinemaonline
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.dggorbachev.cinemaonline.base.navigation.BackButtonListener
 import com.dggorbachev.cinemaonline.base.navigation.Screens
@@ -11,6 +12,7 @@ import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +33,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navigatorHolder.setNavigator(navigator)
-        router.newRootScreen(Screens.FilmsListScreen())
+//        router.newRootScreen(Screens.FilmsListScreen())
+
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.mainTab -> {
+                    val screen = Screens.FilmsListScreen()
+                    router.newRootScreen(screen)
+                }
+                R.id.bookmarksTab -> {
+                    val screen = Screens.BookmarksScreen()
+                    router.newRootScreen(screen)
+                }
+            }
+            true
+        }
+        binding.bottomNavigationView.selectedItemId = R.id.mainTab
     }
 
 
@@ -48,10 +65,15 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val fragment = supportFragmentManager.findFragmentById(R.id.flMain)
         if (fragment != null && fragment is BackButtonListener
-            && (fragment as BackButtonListener).onBackPressed()) {
+            && (fragment as BackButtonListener).onBackPressed()
+        ) {
             return
         } else {
             super.onBackPressed()
         }
+    }
+
+    fun controlBar(visibility: Int) {
+        binding.bottomNavigationView.visibility = visibility
     }
 }

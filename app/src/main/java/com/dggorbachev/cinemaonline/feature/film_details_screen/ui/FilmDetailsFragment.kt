@@ -9,8 +9,11 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.dggorbachev.cinemaonline.MainActivity
 import com.dggorbachev.cinemaonline.R
 import com.dggorbachev.cinemaonline.base.common.Constants
+import com.dggorbachev.cinemaonline.base.common.Screen
+import com.dggorbachev.cinemaonline.base.navigation.BackButtonListener
 import com.dggorbachev.cinemaonline.base.utils.setThrottledClickListener
 import com.dggorbachev.cinemaonline.databinding.FragmentFilmDetailsBinding
 import com.dggorbachev.cinemaonline.feature.film_details_screen.domain.VideosInteractor
@@ -18,33 +21,40 @@ import com.dggorbachev.cinemaonline.feature.films_list_screen.domain.model.FilmD
 import com.dggorbachev.cinemaonline.feature.player_screen.ui.PlayerActivity
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.Router
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class FilmDetailsFragment : Fragment(R.layout.fragment_film_details) {
-
+class FilmDetailsFragment : Fragment(R.layout.fragment_film_details), BackButtonListener {
 
     companion object {
         private const val EXTRA_MOVIE = "extra_movie"
+        private const val PREVIOUS_SCREEN = "previous_screen"
+
         fun newInstance(
-            movieModel: FilmDomainModel
+            movieModel: FilmDomainModel,
+            screen: Screen
         ): FilmDetailsFragment {
             return FilmDetailsFragment().apply {
-                arguments = bundleOf(EXTRA_MOVIE to movieModel)
+                arguments = bundleOf(
+                    EXTRA_MOVIE to movieModel,
+                    PREVIOUS_SCREEN to screen
+                )
             }
         }
     }
 
-    private lateinit var videoInteractor: VideosInteractor
-
     private lateinit var binding: FragmentFilmDetailsBinding
     private val movieModel: FilmDomainModel
         get() = requireArguments().getParcelable(EXTRA_MOVIE)!!
+    private val previousScreen: Screen
+        get() = (requireArguments().getSerializable(PREVIOUS_SCREEN)!! as Screen)
 
     private val viewModel by viewModel<FilmDetailsViewModel>() {
         parametersOf(
-            movieModel
+            movieModel,
+            previousScreen
         )
     }
 
@@ -54,6 +64,7 @@ class FilmDetailsFragment : Fragment(R.layout.fragment_film_details) {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFilmDetailsBinding.inflate(inflater, container, false)
+        (requireActivity() as MainActivity).controlBar(View.GONE)
         return binding.root
     }
 
@@ -65,7 +76,6 @@ class FilmDetailsFragment : Fragment(R.layout.fragment_film_details) {
 
     private fun render(state: ViewState) {
         binding.tvFilmTitle.text = movieModel.title
-        binding.tvFilmYear.text = getYearFromDate(movieModel.releaseDate)
         binding.tvDescInfo.text = movieModel.overview
 
         Glide.with(binding.root)
@@ -75,6 +85,16 @@ class FilmDetailsFragment : Fragment(R.layout.fragment_film_details) {
 
         binding.btnPlay.setThrottledClickListener {
             viewModel.processUiEvent(UiEvent.OnWatchClick(state.videoKey))
+        }
+        binding.cbSave.setThrottledClickListener {
+            viewModel.processUiEvent(UiEvent.OnBookmarkClick)
+        }
+        binding.cbSave.apply {
+            if (state.filmDomainModel.isFavorite) {
+                binding.cbSave.setButtonDrawable(R.drawable.save)
+            } else {
+                binding.cbSave.setButtonDrawable(R.drawable.save_border)
+            }
         }
     }
 
@@ -87,7 +107,11 @@ class FilmDetailsFragment : Fragment(R.layout.fragment_film_details) {
         startActivity(intent);
     }
 
-    private fun getYearFromDate(date: String) = date.split('-')[0]
-
-
+    override fun onBackPressed(): Boolean {
+        if (previousScreen == Screen.BOOKMARKS) {
+            viewModel.processUiEvent(UiEvent.OnBackPressed)
+            return true
+        }
+        return false
+    }
 }
