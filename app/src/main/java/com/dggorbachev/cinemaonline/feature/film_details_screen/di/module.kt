@@ -33,7 +33,7 @@ val videosListScreenModule = module {
         VideosInteractor(get<VideosRepo>())
     }
 
-    viewModel<FilmDetailsViewModel> { (filmModel: FilmDomainModel, previousScreen: Screen) ->
+    viewModel<FilmDetailsViewModel> { (filmModel: FilmDomainModel) ->
         FilmDetailsViewModel(
             get<VideosInteractor>(),
             get<Cicerone<Router>>().router,

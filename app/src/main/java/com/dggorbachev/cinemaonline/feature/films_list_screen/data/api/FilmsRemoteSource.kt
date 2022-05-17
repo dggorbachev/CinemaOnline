@@ -6,9 +6,4 @@ class FilmsRemoteSource(private val filmsApi: FilmsApi) {
     suspend fun getFilmsList(): ResponseFilmsModel {
         return filmsApi.getFilmsList()
     }
-
-//    suspend fun getVideosList(): ResponseVideosModel {
-//        val movieId=this.filmsApi.getFilmsList().results.
-//        return videosApi.getVideosList(@Path("movie_id") movieId: )
-//    }
 }

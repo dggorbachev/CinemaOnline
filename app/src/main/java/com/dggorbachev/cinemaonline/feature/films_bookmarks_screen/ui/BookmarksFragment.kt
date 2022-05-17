@@ -50,11 +50,6 @@ class BookmarksFragment : Fragment(R.layout.fragment_bookmarks) {
         filmsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.viewState.observe(viewLifecycleOwner, Observer(::render))
-
-//        binding.swipeLayout.setOnRefreshListener {
-//            viewModel.processUiEvent(UiEvent.RefreshScreen)
-//            binding.swipeLayout.isRefreshing = false
-//        }
     }
 
     private fun render(viewState: ViewState) {
