@@ -19,4 +19,11 @@ The following technologies were used in the project:
 
 Here you can see the demonstration
 
-![Demo File]("https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo.gif")
+## Feed
+<img src= "https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo_feed.gif" width="250" height="500" />
+
+## Bookmarks
+<img src= "https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo_bookmarks.gif" width="250" height="500" />
+
+## Theme
+<img src= "https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo_theme.gif" width="250" height="500" />
