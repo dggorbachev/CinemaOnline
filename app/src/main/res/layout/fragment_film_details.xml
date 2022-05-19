@@ -86,7 +86,7 @@
                 android:layout_below="@id/tvDescTitle"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="15dp"
-                android:text="@string/the_narrator_an_automobile_recall_specialist_is_unfulfilled_by_his_job_and_possessions_and_suffers_from_chronic_insomnia_to_cure_this_he_attends_support_groups_posing_as_a_sufferer_of_diseases_his_bliss_is_disturbed_when_another_impostor_marla_singer_begins_attending_the_same_groups_the_two_agree_to_split_which_groups_they_attend_after_settling_in_green_hills_sonic_is_eager_to_prove_he_has_what_it_takes_to_be_a_true_hero_his_test_comes_when_dr_robotnik_returns_this_time_with_a_new_partner_knuckles_in_search_for_an_emerald_that_has_the_power_to_destroy_civilizations_sonic_teams_up_with_his_own_sidekick_tails_and_together_they_embark_on_a_globe_trotting_journey_to_find_the_emerald_before_it_falls_into_the_wrong_hands"
+                android:text="@string/desc_example"
                 android:textAppearance="@style/Subtitle2" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
