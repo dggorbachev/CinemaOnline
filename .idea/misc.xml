@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19892883300781253" />
         <entry key="app/src/main/res/layout/activity_player.xml" value="0.1485439724392361" />
         <entry key="app/src/main/res/layout/fragment_bookmarks.xml" value="0.1722412109375" />
-        <entry key="app/src/main/res/layout/fragment_film_details.xml" value="0.352" />
+        <entry key="app/src/main/res/layout/fragment_film_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_films_list.xml" value="0.23217926025390626" />
         <entry key="app/src/main/res/layout/fragment_player.xml" value="0.2621231079101562" />
         <entry key="app/src/main/res/layout/item_film.xml" value="0.4247787610619469" />
