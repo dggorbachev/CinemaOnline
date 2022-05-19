@@ -19,4 +19,4 @@ The following technologies were used in the project:
 
 Here you can see the demonstration
 
-<img src="https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo.gif" width="250" height="500" />
+![Demo File]("https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo.gif")
