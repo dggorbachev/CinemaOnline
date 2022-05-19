@@ -7,7 +7,8 @@ Cinema online is an Android app in which you can view a list of popular movies, 
 The following technologies were used in the project:
 
 - Language Kotlin
-- Pattern MVVM and partially MVI 
+- Pattern MVVM and partially MVI
+- Light and dark theme
 - Dependency Injection framework Koin
 - HTTP client Retrofit
 - Coroutines
@@ -18,4 +19,4 @@ The following technologies were used in the project:
 
 Here you can see the demonstration
 
-<img src="https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo.gif" width="250" height="500" />
+![Demo File]("https://github.com/dggorbachev/CinemaOnline/blob/master/Demo/demo.gif")
