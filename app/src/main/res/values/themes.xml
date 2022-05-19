@@ -34,6 +34,7 @@
         <item name="colorSurface">?attr/colorSurfaceMain</item>
 
         <item name="backgroundCard">@drawable/background_light</item>
+        <item name="backgroundGenres">@color/grey_300</item>
     </style>
 
 </resources>

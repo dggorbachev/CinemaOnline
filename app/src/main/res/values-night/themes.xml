@@ -26,6 +26,7 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
 
         <item name="backgroundCard">@drawable/background_dark</item>
+        <item name="backgroundGenres">@color/background_dark_night</item>
     </style>
 
 </resources>

@@ -5,6 +5,8 @@ import com.dggorbachev.cinemaonline.feature.film_details_screen.data.api.VideosR
 
 class VideosInteractor(val repo: VideosRepo) {
     suspend fun getVideosList(movieId: Int) = attempt {
-        repo.getVideosList(movieId)
+        repo.getVideosList(movieId).filter {
+            it.type == "Trailer"
+        }
     }
 }

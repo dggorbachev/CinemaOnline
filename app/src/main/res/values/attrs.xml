@@ -24,5 +24,6 @@
         <attr name="colorOnSurfaceError" format="color" />
 
         <attr name="backgroundCard" format="reference" />
+        <attr name="backgroundGenres" format="reference" />
     </declare-styleable>
 </resources>

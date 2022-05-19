@@ -6,5 +6,6 @@ import com.dggorbachev.cinemaonline.feature.films_list_screen.data.api.model.Fil
 import com.dggorbachev.cinemaonline.feature.films_list_screen.domain.model.FilmDomainModel
 
 fun VideoModel.toDomain() = VideoDomainModel(
-    key = key
+    key = key,
+    type = type
 )

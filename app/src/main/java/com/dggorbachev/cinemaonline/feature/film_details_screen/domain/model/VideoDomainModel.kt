@@ -5,5 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class VideoDomainModel(
-    val key: String
+    val key: String,
+    val type: String
 ) : Parcelable
